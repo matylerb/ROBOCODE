@@ -22,7 +22,7 @@ import java.awt.Color;
 //start public class
 public class BORDER_SENTRY extends Robot
 {
-	int distance =66;;
+	int distance =66;
 
 	/**
 	 * run: Strong's default behavior
