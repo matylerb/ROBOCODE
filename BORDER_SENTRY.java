@@ -16,7 +16,7 @@ import java.awt.Color;
 // API help : https://robocode.sourceforge.io/docs/robocode/robocode/Robot.html
 
 /**
- * Strong - a robot by (Tyler Brady)
+ * CyberTank - a robot by (Tyler Brady)
  */
 
 //start public class
@@ -25,7 +25,7 @@ public class BORDER_SENTRY extends Robot
 	int distance =66;
 
 	/**
-	 * run: Strong's default behavior
+	 * run: CyberTank's default behavior
 	 */
 	//start run
 	public void run() {
