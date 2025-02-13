@@ -45,25 +45,23 @@ public class BORDER_SENTRY extends Robot
 			// Replace the next 4 lines with any behavior you would like
 			// Replace the next line with any behavior you would like
 		
-           turnGunRight(60);
+           		turnGunRight(60);
          
-           scan();
-			
-			
+           		scan();	
 		}//end while loop
 	}
 	public void moveTowardsCenter() {
-        double centerX = 400; // Center X coordinate of the 800x800 arena
-        double centerY = 400; // Center Y coordinate of the 800x800 arena
-        double angleToCenter = Math.toDegrees(Math.atan2(centerX - getX(), centerY - getY()));
+        	double centerX = 400; // Center X coordinate of the 800x800 arena
+        	double centerY = 400; // Center Y coordinate of the 800x800 arena
+        	double angleToCenter = Math.toDegrees(Math.atan2(centerX - getX(), centerY - getY()));
 
-        // Turn towards the center
-        double turnAngle = normalRelativeAngleDegrees(angleToCenter - getHeading());
-        turnRight(turnAngle);
+        	// Turn towards the center
+        	double turnAngle = normalRelativeAngleDegrees(angleToCenter - getHeading());
+        	turnRight(turnAngle);
 
-        // Move towards the center
-        ahead(400); // Adjust the distance as needed
-    }//end moveTowardsCenter
+        	// Move towards the center
+        	ahead(400); // Adjust the distance as needed
+    	}//end moveTowardsCenter
 	
 
 	/**
@@ -75,9 +73,9 @@ public class BORDER_SENTRY extends Robot
 		
 		System.out.println("Scanned Robot: " + e.getName());
 
-        if (isBorderGuard(e)) {
-            return;
-        }//end if
+        	if (isBorderGuard(e)) {
+            		return;
+        	}//end if
 		// Calculate exact location of the robot
 		double absoluteBearing = getHeading() + e.getBearing();
 		double bearingFromGun = normalRelativeAngleDegrees(absoluteBearing - getGunHeading());
@@ -115,7 +113,7 @@ public class BORDER_SENTRY extends Robot
 		scan();
 		
 	
-	}
+	}//end onHitByBullet
 	
 	/**
 	 * onHitWall: What to do when you hit a wall
@@ -125,9 +123,9 @@ public class BORDER_SENTRY extends Robot
 		double turnGunAmt = normalRelativeAngleDegrees(e.getBearing() + getHeading() - getGunHeading());
 		System.out.println("Hit Robot: " + e.getName());
 
-        if (e.getEnergy()>175) {
-            return;
-        }//end if
+        	if (e.getEnergy()>175) {
+            		return;
+        	}//end if
 		
 		turnGunRight(turnGunAmt);
 		fire(3);
@@ -144,6 +142,6 @@ public class BORDER_SENTRY extends Robot
 	
 	private boolean isBorderGuard(ScannedRobotEvent e) {
 		
-		return e.getEnergy() > 150;
+		return e.getEnergy() > 175;
     }//end isBorderGaurd	
 }//end public class
